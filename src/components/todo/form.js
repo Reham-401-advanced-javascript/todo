@@ -13,13 +13,31 @@ function TodoForm (props) {
   const handleInputChange = e => {
     setItem({...item, [e.target.name]: e.target.value } );
   };
+  const url = 'https://lab-32.herokuapp.com/todo';
 
   const handleSubmit = (e) => {
     e.preventDefault();
     e.target.reset();
-    props.handleSubmit(item);
+   
+    const fetchData = async () => {
+      fetch(url,{
+        method : 'post',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(item),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+
+          console.log('kkkkkkkkkkkkkkkkkkkk',result);
+          props.handleSubmit(result);
+        })
+        .catch(console.error);
+    };
+    fetchData();
     // const item = {};
-    setItem(item);
+    // setItem(item);
   };
 
  
