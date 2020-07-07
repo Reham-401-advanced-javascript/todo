@@ -9,7 +9,7 @@
 - Phase 1: Begin the build of an application designed for creating and organizing a “To Do” list in your browser.
 
 ## deployment links
- - [netlify]( https://ecstatic-hamilton-91a8bd.netlify.app/)
+ - [netlify]( https://unruffled-curran-11f338.netlify.app/)
 
 
 ## Setup
