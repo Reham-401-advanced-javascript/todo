@@ -4,6 +4,22 @@
   "description": "",
   "keywords": [],
   "main": "src/index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "CI= react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Reham-Omar/todo.git"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "homepage": "/",
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
@@ -17,12 +33,7 @@
     "uuid": "8.1.0"
   },
   "devDependencies": {},
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
+ 
   "browserslist": {
     "production": [
       ">0.2%",
