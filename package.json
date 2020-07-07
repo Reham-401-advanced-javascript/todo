@@ -33,7 +33,6 @@
     "uuid": "8.1.0"
   },
   "devDependencies": {},
- 
   "browserslist": {
     "production": [
       ">0.2%",
