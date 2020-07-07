@@ -1,4 +1,4 @@
-# LAB-31- TODO
+# LAB-32- TODO
 ### Author: Reham Omar AL-Sobh
 
  ## Links and Resources
@@ -9,8 +9,7 @@
 - Phase 1: Begin the build of an application designed for creating and organizing a “To Do” list in your browser.
 
 ## deployment links
- - [netlify]( )
- - [github ]()
+ - [netlify](https://ecstatic-hamilton-91a8bd.netlify.app/)
 
 
 ## Setup
