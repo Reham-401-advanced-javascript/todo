@@ -17,7 +17,7 @@ function TodoForm (props) {
   const url = 'https://lab-32.herokuapp.com/todo';
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     e.target.reset();
    
     // const fetchData = async () => {
