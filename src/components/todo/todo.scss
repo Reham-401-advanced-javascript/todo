@@ -33,3 +33,11 @@ nav.navbar.navbar-expand.navbar-dark.bg-dark {
     margin-left: 104px;
     width: 80%;
 }
+
+.list-group-item {
+    margin-bottom: 30px;
+}
+
+.list-group-item+.list-group-item {
+     border-top-width: 1px; 
+}

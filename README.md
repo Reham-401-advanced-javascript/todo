@@ -3,11 +3,16 @@
 
  ## Links and Resources
 
- - [submission PR/lab-31](https://github.com/Reham-401-advanced-javascript/todo/pull/1)
+ - [submission PR/lab-32](https://github.com/Reham-401-advanced-javascript/todo/pull/2)
 
 ## Documentation
-- Phase 1: Begin the build of an application designed for creating and organizing a “To Do” list in your browser.
+- Phase 2 Requirements
 
+   - In Phase 2, we’re going to connect the To Do Manager to a backend system, using the API server that we have previously built. The core functionality and stories do not change (reference Phase 1), but a new one has been added to note this shift in persistence.
+
+      - As a user, I would like to be able to add, update, and delete To Do items
+      - As a user, I would like my To Do Items to be permanently stored so that I can re-access them at any time, using any device
+      
 ## deployment links
  - [netlify](https://ecstatic-hamilton-91a8bd.netlify.app/)
 

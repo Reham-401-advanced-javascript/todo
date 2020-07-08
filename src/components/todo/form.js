@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import axios from 'axios';
 
 function TodoForm (props) {
 
@@ -19,25 +20,45 @@ function TodoForm (props) {
     e.preventDefault();
     e.target.reset();
    
-    const fetchData = async () => {
-      fetch(url,{
-        method : 'post',
-        mode: 'cors',
-        cache: 'no-cache',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(item),
-      })
-        .then((response) => response.json())
-        .then((result) => {
+    // const fetchData = async () => {
+    //   fetch(url,{
+    //     method : 'post',
+    //     mode: 'cors',
+    //     cache: 'no-cache',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(item),
+    //   })
+    //     .then((response) => response.json())
+    //     .then((result) => {
 
-          console.log('kkkkkkkkkkkkkkkkkkkk',result);
-          props.handleSubmit(result);
-        })
-        .catch(console.error);
-    };
-    fetchData();
+    //       // console.log('kkkkkkkkkkkkkkkkkkkk',result);
+    //       props.handleSubmit(result);
+    //     })
+    //     .catch(console.error);
+    // };
+    // fetchData();
     // const item = {};
     // setItem(item);
+    
+    let config={
+      url:url,
+      method : 'post',
+      mode: 'cors',
+      cache: 'no-cache',
+      headers: { 'Content-Type': 'application/json' },
+      data: item,
+    };
+    axios.request(config)
+      .then(response => response.data)
+     
+      .then((result) => {
+
+        // console.log('kkkkkkkkkkkkkkkkkkkk',result);
+        props.handleSubmit(result);
+      })
+      .catch(console.error);
+    
+   
   };
 
  
@@ -74,7 +95,7 @@ function TodoForm (props) {
               
               <Form.Group controlId="formBasicRange">
                 <Form.Label>Difficulty Rating</Form.Label>
-                <Form.Control type="range" />
+                <Form.Control type="range" name="difficulty" onChange={handleInputChange} />
               </Form.Group>
             </Row>
             <Button variant="primary" type="submit">
