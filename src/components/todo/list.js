@@ -6,7 +6,6 @@ import './todo.scss';
 
 function TodoList (props) {
 
-  // console.log('sssssssssss',props.list);
   return (
     <ul>
       <ListGroup>
