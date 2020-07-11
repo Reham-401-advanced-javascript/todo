@@ -2,7 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import axios from 'axios';
-
+import Pagination from './context.js';
+import ToggleHideShow from './hide-show';
+import PaginationContext from '../contex/context.js';
+import ToggleShowProvider from '../contex/show-hide';
+import ChangeNumberOfPages from './itemperpage';
 import TodoForm from './form.js';
 import TodoList from './list.js';
 
@@ -191,18 +195,25 @@ function ToDo (props) {
         <div>
           <TodoForm handleSubmit={addItem} />
         </div>
-
-        <div>
-          <TodoList
+        <PaginationContext list={list}>
+          <div className="list">
+            <ToggleShowProvider list={list}>
+              <ToggleHideShow/>
+              <ChangeNumberOfPages/>
+              <TodoList
           
-            list={list}
-            handledelete={deleteItem}
-            handleComplete={toggleComplete}
-          />
-          
-        </div>
+                list={list}
+                handledelete={deleteItem}
+                handleComplete={toggleComplete}
+              />
+            </ToggleShowProvider>
 
-        
+            <Pagination
+              allItem={list.length}
+            />
+          </div>
+
+        </PaginationContext>
       </section>
     </>
   );

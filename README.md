@@ -4,7 +4,7 @@
 
  ## Links and Resources
 
- - [submission PR/lab-32](https://github.com/Reham-401-advanced-javascript/todo/pull/3)
+ - [submission PR/lab-33](https://github.com/Reham-401-advanced-javascript/todo/pull/3)
 
 ## Documentation
 - Phase 3 Requirements
@@ -16,7 +16,7 @@
 - As a user, I would like the option to change my default preferences with regards to how many Items I see per page, which items are filtered, and how they are sorted
       
 ## deployment links
- - [netlify](https://ecstatic-hamilton-91a8bd.netlify.app/)
+ - [netlify](https://kind-noether-e57e25.netlify.app/)
 
 
 ## Setup

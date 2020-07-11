@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import './todo.scss';
+import { ToggleContext } from '../contex/show-hide';
+import { PaginationContext }  from '../contex/context';
 
 function TodoList (props) {
-
+  const toggleContext = useContext(ToggleContext);
+  const pagination = useContext(PaginationContext);
   return (
     <ul>
       <ListGroup>
       
-        {props.list.map((item) => (
-
-          <ListGroup.Item>
+        {pagination.itemsInTheCurrentPage.map(item => (
+          
+          <ListGroup.Item  className={`complete-${item.complete}-${toggleContext.status}`}
+            key={item._id} >
             <Button style={{marginRight:'1vw'}} className="rounded-pill" alt="120x75" variant={(item.complete)?'danger':'success'} onClick={() => props.handleComplete(item._id)}>{(item.complete)?'complete':'pending'}</Button>
 
             <p  style={{marginRight:'2vw'}}>{item.assignee}</p>
