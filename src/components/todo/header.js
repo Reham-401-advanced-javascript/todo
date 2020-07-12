@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
-
+import Login from '../todo/auth/logIn.js';
+import SignUp from '../todo/auth/SignUp.js';
 
 function Header (props){
   
@@ -11,6 +12,14 @@ function Header (props){
         
       Home
       </Navbar.Brand>
+      <ul>
+        <Login />
+
+      </ul>
+      <ul>
+
+        <SignUp />
+      </ul>
     </Navbar>
 
     
