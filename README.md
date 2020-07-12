@@ -18,7 +18,7 @@ As a user, I want to ensure that only fellow users that are allowed to “update
 As a user, I want to ensure that only fellow users that are allowed to “delete”, based on their user type, can delete new To Do Items
       
 ## deployment links
- - [netlify](https://kind-noether-e57e25.netlify.app/)
+ - [netlify](https://admiring-kilby-09d3fb.netlify.app/)
 
 
 ## Setup
