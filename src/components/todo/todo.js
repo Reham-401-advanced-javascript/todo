@@ -16,6 +16,7 @@ function ToDo (props) {
     item._id = Math.random();
     item.complete = false;
     setList( [...list, item]);
+    localStorage.setItem('list', JSON.stringify( [...list, item]));
   };
 
   const toggleComplete = id => {
@@ -30,19 +31,36 @@ function ToDo (props) {
 
   };
 
-  useEffect(() => {
-    let list = [
-      { _id: 1, complete: false, text: 'Clean the Kitchen', difficulty: 3, assignee: 'Person A'},
-      { _id: 2, complete: false, text: 'Do the Laundry', difficulty: 2, assignee: 'Person A'},
-      { _id: 3, complete: false, text: 'Walk the Dog', difficulty: 4, assignee: 'Person B'},
-      { _id: 4, complete: true, text: 'Do Homework', difficulty: 3, assignee: 'Person C'},
-      { _id: 5, complete: false, text: 'Take a Nap', difficulty: 1, assignee: 'Person B'},
-    ];
+  // useEffect(() => {
+  //   let list = [
+  //     { _id: 1, complete: false, text: 'Clean the Kitchen', difficulty: 3, assignee: 'Person A'},
+  //     { _id: 2, complete: false, text: 'Do the Laundry', difficulty: 2, assignee: 'Person A'},
+  //     { _id: 3, complete: false, text: 'Walk the Dog', difficulty: 4, assignee: 'Person B'},
+  //     { _id: 4, complete: true, text: 'Do Homework', difficulty: 3, assignee: 'Person C'},
+  //     { _id: 5, complete: false, text: 'Take a Nap', difficulty: 1, assignee: 'Person B'},
+  //   ];
 
-    setList(list);
+  //   setList(list);
+  // }, []);
+
+  useEffect(()=> {
+    let listView = JSON.parse(localStorage.getItem('list'))||[];
+    setList(listView);
   }, []);
 
- 
+  const handleDelete =(_id) =>{
+    let listToDelete = [_id];
+    let result = list.filter( el => (-1 === listToDelete.indexOf(el._id)) );
+    localStorage.setItem('list', JSON.stringify( result));
+    setList(result);
+  };
+  const handleUpdate =(i) =>{
+    let input = document.getElementsByName(i)[0].value;
+    list[i].text = input;
+    localStorage.setItem('list', JSON.stringify( list));
+    setList(list);
+    window.location.reload(true);
+  };
   return (
     <>
       <header>
@@ -63,6 +81,8 @@ function ToDo (props) {
           <TodoList
             list={list}
             handleComplete={toggleComplete}
+            handleDelete={handleDelete}
+            handleUpdate={handleUpdate}
           />
         </div>
       </section>
